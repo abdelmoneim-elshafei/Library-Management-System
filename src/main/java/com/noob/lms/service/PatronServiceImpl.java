@@ -15,26 +15,32 @@ public class PatronServiceImpl implements PatronService {
 
     @Override
     public Patron addPatron(Patron patron) {
-        return null;
+        return patronRepo.save(patron);
     }
 
     @Override
     public Patron getPatronById(Long id) {
-        return null;
+        return patronRepo.findById(id).orElseThrow(()-> new RuntimeException("Not Found"));
     }
 
     @Override
     public List<Patron> getPatrons() {
-        return List.of();
+        return patronRepo.findAll();
     }
 
     @Override
     public Patron updatePatron(Patron patron, Long id) {
-        return null;
+        Patron p = patronRepo.findById(id).orElseThrow(() ->new RuntimeException("Not Found"));
+        p.setEmail(patron.getEmail());
+        p.setName(patron.getName());
+        p.setPhoneNumber(patron.getPhoneNumber());
+        return patronRepo.save(p);
     }
 
     @Override
     public Patron deletePatron(Long id) {
-        return null;
+        Patron p = patronRepo.findById(id).orElseThrow(() ->new RuntimeException("Not Found"));
+        patronRepo.deleteById(id);
+        return p;
     }
 }

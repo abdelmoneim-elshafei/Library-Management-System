@@ -1,6 +1,8 @@
 package com.noob.lms.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
@@ -16,10 +18,14 @@ public class Patron {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    String email;
-    String phoneNumber;
+    private Long id;
+    @NotBlank(message = "Name is required")
+    private String name;
+    @Email(message = "Enter vaild Email")
+    @NotBlank(message = "Email is required")
+    private String email;
+    @NotBlank(message = "phoneNumber is required")
+    private String phoneNumber;
 
     @Override
     public final boolean equals(Object o) {
