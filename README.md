@@ -40,6 +40,10 @@ Borrowing endpoints:
 ● POST /api/borrow/{bookId}/patron/{patronId}: Allow a patron to
 borrow a book.
 
-● PUT /api/return/{bookId}/patron/{patronId}: Record the return of a borrowed book by a patron.![2024-04-30_10-42](https://github.com/abdelmoneim-elshafei/Library-Management-System/assets/103078233/ea100561-f02b-4dd8-93d6-3c2aec242902)
+● PUT /api/return/{bookId}/patron/{patronId}: Record the return of a borrowed book by a patron.
+
+● to see the Documentation Run the application and go to " http://localhost:8080/swagger-ui/index.html#/ "
+
+![2024-04-30_10-42](https://github.com/abdelmoneim-elshafei/Library-Management-System/assets/103078233/ea100561-f02b-4dd8-93d6-3c2aec242902)
 
 
